@@ -11,18 +11,59 @@ interface CurrentWeatherProps {
   currentWeather: CurrentWeather;
 }
 
+// const getAQIDescription = (
+//   aqi: number
+// ): { description: string; color: string } => {
+//   if (!aqi) return { description: "N/A", color: "text-gray-400" };
+//   if (aqi === 1) return { description: "Excellent", color: "text-green-500" };
+//   if (aqi === 2) return { description: "Good", color: "text-blue-500" };
+//   if (aqi === 3) return { description: "Fair", color: "text-yellow-500" };
+//   if (aqi === 4) return { description: "Moderate", color: "text-orange-500" };
+//   if (aqi === 5) return { description: "Poor", color: "text-orange-500" };
+//   if (aqi === 6) return { description: "Very Poor", color: "text-purple-500" };
+//   if (aqi >= 7) return { description: "Extremely Poor", color: "text-red-500" };
+//   return { description: "N/A", color: "text-gray-400" };
+// };
+enum AQIDescription {
+  NA = "N/A",
+  Excellent = "Excellent",
+  Good = "Good",
+  Fair = "Fair",
+  Moderate = "Moderate",
+  Poor = "Poor",
+  VeryPoor = "Very Poor",
+  ExtremelyPoor = "Extremely Poor",
+}
+
+enum AQIColor {
+  Gray = "text-gray-500",
+  Green = "text-green-500",
+  Blue = "text-blue-500",
+  Yellow = "text-yellow-500",
+  Orange = "text-orange-500",
+  Purple = "text-purple-500",
+  Red = "text-red-500",
+}
+
 const getAQIDescription = (
   aqi: number
 ): { description: string; color: string } => {
-  if (!aqi) return { description: "N/A", color: "text-gray-400" };
-  if (aqi === 1) return { description: "Excellent", color: "text-green-500" };
-  if (aqi === 2) return { description: "Good", color: "text-blue-500" };
-  if (aqi === 3) return { description: "Fair", color: "text-yellow-500" };
-  if (aqi === 4) return { description: "Moderate", color: "text-orange-500" };
-  if (aqi === 5) return { description: "Poor", color: "text-orange-500" };
-  if (aqi === 6) return { description: "Very Poor", color: "text-purple-500" };
-  if (aqi >= 7) return { description: "Extremely Poor", color: "text-red-500" };
-  return { description: "N/A", color: "text-gray-400" };
+  if (!aqi) return { description: AQIDescription.NA, color: AQIColor.Gray };
+  if (aqi === 1)
+    return { description: AQIDescription.Excellent, color: AQIColor.Green };
+  if (aqi === 2)
+    return { description: AQIDescription.Good, color: AQIColor.Blue };
+  if (aqi === 3)
+    return { description: AQIDescription.Fair, color: AQIColor.Yellow };
+  if (aqi === 4)
+    return { description: AQIDescription.Moderate, color: AQIColor.Orange };
+  if (aqi === 5)
+    return { description: AQIDescription.Poor, color: AQIColor.Orange };
+  if (aqi === 6)
+    return { description: AQIDescription.VeryPoor, color: AQIColor.Purple };
+  if (aqi >= 7)
+    return { description: AQIDescription.ExtremelyPoor, color: AQIColor.Red };
+  return { description: AQIDescription.NA, color: AQIColor.Gray };
 };
 
 const AdditionalInfo: React.FC<CurrentWeatherProps> = ({ currentWeather }) => {
