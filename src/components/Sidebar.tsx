@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { FiMenu, FiSearch, FiSettings } from "react-icons/fi";
 import { LocationDetail } from "../types";
+import { IoClose } from "react-icons/io5";
 
 interface SidebarProps {
   setModalOpen: (open: boolean) => void;
@@ -24,7 +25,7 @@ const Sidebar: React.FC<SidebarProps> = ({
           className="text-white text-2xl focus:outline-none"
           onClick={() => setSidebarOpen(!isSidebarOpen)}
         >
-          <FiMenu />
+          {isSidebarOpen ? <IoClose /> : <FiMenu />}
         </button>
 
         {isSidebarOpen && (
