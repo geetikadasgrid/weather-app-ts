@@ -124,7 +124,6 @@
   @apply w-48 h-48 object-cover  hover:scale-105 transition-transform duration-300 ease-in-out;
 }
 
-/* Custom animations */
 @keyframes fade-in {
   from {
     opacity: 0;

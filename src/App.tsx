@@ -175,9 +175,20 @@ function App() {
       localStorage.getItem("locations") || "[]"
     );
     setAddedLocations(storedLocations);
-
+    // document.title = `Weather in ${currentWeather.locationName}`;
     return () => clearTimeout(timer);
   }, []);
+  useEffect(() => {
+    if (locationDetail.locationName) {
+      document.title = `Weather in ${locationDetail.locationName}`;
+      const favicon = document.getElementById(
+        "favicon"
+      ) as HTMLLinkElement | null;
+      if (favicon) {
+        favicon.href = locationDetail.icons ?? "../public/sun.png";
+      }
+    }
+  }, [locationDetail.locationName, locationDetail.icons]);
 
   return (
     <>
