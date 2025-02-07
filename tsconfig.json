@@ -13,7 +13,8 @@
     "isolatedModules": true,
     "allowImportingTsExtensions": true,
     "forceConsistentCasingInFileNames": true,
-    "noEmit": true
+    "noEmit": true,
+    "types": ["node"]
   },
   "include": ["src"],
   "exclude": ["node_modules", "dist", "vite.config.ts"]

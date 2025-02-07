@@ -1,0 +1,132 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.app-bg {
+  @apply bg-gradient-to-b from-purple-700 via-indigo-500 to-blue-500 text-white min-h-screen;
+}
+
+.sidebar {
+  @apply bg-purple-900 p-4 flex;
+}
+
+.sidebar-header {
+  @apply text-2xl font-bold text-white mb-6;
+}
+
+.sidebar-item {
+  @apply text-lg text-gray-300 py-2 border-b border-gray-700;
+}
+
+.manage-btn {
+  @apply py-2 px-4 bg-blue-600 text-white font-semibold rounded hover:bg-blue-700 transition mt-auto;
+}
+
+.sidebar-icons {
+  @apply flex justify-between items-center mb-6;
+}
+
+.icon-btn {
+  @apply p-2 rounded-lg hover:bg-purple-600 flex items-center justify-center;
+}
+
+.modal-overlay {
+  @apply fixed top-0 left-0 w-full h-full bg-black bg-opacity-50 flex items-center justify-center z-10;
+}
+
+.modal-box {
+  @apply bg-white text-gray-800 rounded-lg p-6 w-1/3 relative shadow-lg;
+}
+
+.modal-header {
+  @apply text-2xl font-bold mb-4;
+}
+.modal-close-btn {
+  @apply bg-red-500 text-white px-4 py-2 rounded hover:bg-red-600 absolute top-2 right-2;
+}
+.modal-submit-btn {
+  @apply bg-green-500 text-white px-4 py-2 rounded hover:bg-green-600;
+}
+
+.btn {
+  @apply px-4 py-2 rounded-md transition-all duration-200 ease-in-out border border-white;
+}
+
+.main-content {
+  @apply flex-1 p-6;
+}
+
+.weather-header {
+  @apply text-center text-4xl font-bold;
+}
+
+.temperature {
+  @apply text-6xl font-bold my-2;
+}
+
+.weather-summary {
+  @apply text-lg font-semibold;
+}
+
+.card {
+  @apply p-4 bg-purple-900 bg-opacity-40 rounded-lg shadow;
+}
+
+.card-title {
+  @apply text-lg font-semibold mb-2;
+}
+
+.card-value {
+  @apply text-xl font-bold;
+}
+
+.settings-container {
+  @apply bg-black text-white min-h-screen p-4;
+}
+
+.settings-header {
+  @apply text-lg font-bold mb-4;
+}
+
+.settings-section {
+  @apply border-t border-gray-700 pt-4;
+}
+
+.settings-item {
+  @apply flex justify-between items-center py-3 px-4 bg-gray-800 rounded-lg mb-2;
+}
+
+.settings-item-title {
+  @apply text-base text-gray-300;
+}
+
+.settings-item-subtitle {
+  @apply text-sm text-blue-500;
+}
+
+.settings-toggle {
+  @apply relative inline-flex items-center cursor-pointer;
+}
+
+.settings-toggle input {
+  @apply sr-only;
+}
+
+.settings-toggle-label {
+  @apply w-10 h-6 bg-gray-700 rounded-full;
+}
+
+.settings-toggle-circle {
+  @apply absolute left-1 top-1 w-4 h-4 bg-white rounded-full transition-all;
+}
+
+.settings-toggle input:checked + .settings-toggle-label {
+  @apply bg-blue-600;
+}
+
+.settings-toggle
+  input:checked
+  + .settings-toggle-label
+  .settings-toggle-circle {
+  @apply translate-x-4;
+}
